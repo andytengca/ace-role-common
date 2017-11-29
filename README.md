@@ -91,8 +91,9 @@ vagrant up
 
 - Robin Schneider | [e-mail](mailto:ypid@riseup.net)
 - modified by [Andy Teng](http://mcin-cnim.ca/) | [e-mail](mailto:andy.teng@mcin.ca)
-- Christopher Steel](http://mcin-cnim.ca/) | [e-mail](mailto:christopher.steel@mcgill.ca)
+- [Christopher Steel](http://mcin-cnim.ca/) | [e-mail](mailto:christopher.steel@mcgill.ca)
 
-License: 
+License: [AGPLv3](https://tldrlegal.com/license/gnu-affero-general-public-license-v3-%28agpl-3.0%29)
 
 ***
+
