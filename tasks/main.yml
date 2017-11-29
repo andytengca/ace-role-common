@@ -25,12 +25,12 @@
 #      service: change login.defs file
 #      state=restarted
 
-- name: restart workstation
-  shell: sleep 2 && shutdown -r now "Ansible updates triggered"
-  async: 1
-  poll: 0
-  become: true
-  ignore_errors: true
+#- name: restart workstation
+#  shell: sleep 2 && shutdown -r now "Ansible updates triggered"
+#  async: 1
+#  poll: 0
+#  become: true
+#  ignore_errors: true
 
 #- name: Confiure /etc/profile file to make changes on all users
 #  command: sudo bash -c 'echo "umask 027" >> /etc/profile'
