@@ -1,0 +1,35 @@
+--- # roles/common/tasks/debug.yml
+
+
+- debug: var=common_controller_user
+- debug: var=common_controller_home
+- debug: var=common_controller_resources_home
+
+- debug: var=common_deployment_user
+- debug: var=common_deployment_home
+- debug: var=common_deployment_resources_home
+
+#- debug: var=common_major
+#- debug: var=common_moderate_revision
+#- debug: var=common_minor_revision
+#- debug: var=common_build
+
+## Package #
+
+- debug: var=common_package_state
+- debug: var=common_package_version
+- debug: var=common_package_filename
+
+# Resources
+
+- debug: var=common_package_url
+- debug: var=common_checksum_url
+- debug: var=common_checksum_sig_url
+
+- debug: var=common_controller_resources_dir
+- debug: var=common_deployment_resources_dir
+
+# Directories
+
+- debug: var=common_ensure_dirs_on_remote
+- debug: var=common_ensure_dirs_on_local

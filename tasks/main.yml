@@ -1,0 +1,38 @@
+---
+
+
+## to change default sh->dash to sh->bash
+
+- name: change dash to bash
+  command: sudo bash -c 'rm /bin/sh && ln -s /bin/bash /bin/sh'
+
+## to set default umask permission from 022 to 027 on directory and file
+
+- name: Configure login.defs
+  become: True
+  lineinfile:
+    dest: '/etc/login.defs'
+    regexp: '^{{ item.key|upper }}'
+    line: '{{ item.key|upper }}		{{ item.value }}'
+  when: item.value
+  with_dict: '{{ login_defs_options }}'
+
+#  notify: 
+#     - restart workstation
+
+#  handlers:
+#    - name: restart workstation
+#      service: change login.defs file
+#      state=restarted
+
+- name: restart workstation
+  shell: sleep 2 && shutdown -r now "Ansible updates triggered"
+  async: 1
+  poll: 0
+  become: true
+  ignore_errors: true
+
+#- name: Confiure /etc/profile file to make changes on all users
+#  command: sudo bash -c 'echo "umask 027" >> /etc/profile'
+
+

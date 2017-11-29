@@ -1,0 +1,4 @@
+--- # roles/common/vars/debian.yml
+
+# Debian specific vars
+common_package_extension: 'deb'

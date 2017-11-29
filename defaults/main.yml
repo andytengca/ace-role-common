@@ -1,0 +1,6 @@
+---
+
+login_defs_options:
+  umask: "027"
+  USERGROUPS_ENAB: "no"
+
