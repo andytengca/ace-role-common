@@ -4,7 +4,8 @@
 ## to change default sh->dash to sh->bash
 
 - name: change dash to bash
-  command: sudo bash -c 'rm /bin/sh && ln -s /bin/bash /bin/sh'
+  become: true
+  command: bash -c 'rm /bin/sh && ln -s /bin/bash /bin/sh'
 
 ## to set default umask permission from 022 to 027 on directory and file
 
