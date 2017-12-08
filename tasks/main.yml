@@ -18,6 +18,27 @@
   when: item.value
   with_dict: '{{ login_defs_options }}'
 
+## diskspace script
+
+### Ensure for /etc/skel/bin
+
+- name: "Ensure for /etc/skel/bin/ on target system"
+  file:
+    path  : '/etc/skel/bin/'
+    state : 'directory'
+    mode  : '0755'
+
+### Copy over diskspace script
+
+- name: "Copy over diskspace script to /etc/skel/bin/"
+  copy:
+    src   : '~/projects/ace/roles/common/files/diskspace'
+    dest  : '/etc/skel/bin/'
+    owner : 'root'
+    group : 'root'
+    mode  : '0755'
+    force : 'yes'
+
 #  notify: 
 #     - restart workstation
 
