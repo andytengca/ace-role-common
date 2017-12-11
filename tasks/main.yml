@@ -39,6 +39,12 @@
     mode  : '0755'
     force : 'yes'
 
+## Remove old crash reports that might exist in the crash report directory
+
+- name: Remove 'System program problem detected' pop-up bug
+  become: true
+  command: rm -Rf /var/crash/*
+
 #  notify: 
 #     - restart workstation
 
