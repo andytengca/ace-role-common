@@ -93,6 +93,7 @@ vagrant up
 - modified by [Andy Teng](http://mcin-cnim.ca/) | [e-mail](mailto:andy.teng@mcin.ca)
 - [Christopher Steel](http://mcin-cnim.ca/) | [e-mail](mailto:christopher.steel@mcgill.ca)
 - [John Le](http://mcin-cnim.ca/) | [e-mail](mailto:john.le@mcgill.ca)
+
 License: [AGPLv3](https://tldrlegal.com/license/gnu-affero-general-public-license-v3-%28agpl-3.0%29)
 
 ***
