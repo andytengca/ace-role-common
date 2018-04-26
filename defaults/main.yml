@@ -4,3 +4,9 @@ login_defs_options:
   umask: "027"
   USERGROUPS_ENAB: "no"
 
+
+## interfaces wol status ##
+## "d" for disable
+## "g" for enabled
+wol_status: d
+

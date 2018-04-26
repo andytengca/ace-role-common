@@ -63,4 +63,20 @@
 #- name: Confiure /etc/profile file to make changes on all users
 #  command: sudo bash -c 'echo "umask 027" >> /etc/profile'
 
+## WOL setup ##################################################################################################
 
+- name: Check if WOL is enabled on client
+  become: true
+  shell: >
+    ethtool {{ ansible_default_ipv4.interface }} | grep 'Wake-on' | tail -1 | awk '{print substr($0,length,1)}'
+  register: wol_enabled
+- debug:
+    msg: "Current status is: {{ wol_enabled.stdout }}"
+
+- name: Set new status if it not proper
+  become: true
+  shell: >
+    ethtool -s {{ ansible_default_ipv4.interface }} wol {{ wol_status }}
+  when: "wol_status != wol_enabled.stdout"
+
+  ###############################################################################################################
