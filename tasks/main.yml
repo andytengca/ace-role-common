@@ -73,7 +73,7 @@
 - debug:
     msg: "Current status is: {{ wol_enabled.stdout }}"
 
-- name: Set new status if it not proper
+- name: Enable WOL on client's interface
   become: true
   shell: >
     ethtool -s {{ ansible_default_ipv4.interface }} wol {{ wol_status }}
