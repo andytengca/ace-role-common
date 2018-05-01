@@ -65,6 +65,12 @@
 
 ## WOL setup ##################################################################################################
 
+- name: install ethtool
+  apt: name={{ item }} state=present
+  with_items:
+    - ethtool
+  tags: [ 'packages', 'ethtool' ]
+
 - name: Check if WOL is enabled on client
   become: true
   shell: >
@@ -78,5 +84,9 @@
   shell: >
     ethtool -s {{ ansible_default_ipv4.interface }} wol {{ wol_status }}
   when: "wol_status != wol_enabled.stdout"
+
+
+- name: Get the MAC address
+  debug: msg="{{ ansible_default_ipv4.macaddress }}"
 
   ###############################################################################################################
